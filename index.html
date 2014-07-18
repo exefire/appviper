@@ -1,0 +1,96 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<title>Countdown</title>
+<meta name="viewport" content="width=600, user-scalable=no">
+<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/jquery.countdown.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/moment.min.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+<script type="text/javascript">
+$(function(){
+	$("#logo").width( $(window).width()*0.9 );
+	var ahora = new Date();
+	var end = moment('2014-08-01 00:00:00').unix();
+	var ahora = moment(ahora).unix();
+	var B8 = end-ahora;
+	var dia = Math.floor(B8/(3600*24));
+	var hora = Math.floor(B8/3600-dia*24);
+	var minuto = Math.floor(B8/(60)-dia*24*60-hora*60);
+	var segundo = B8-dia*24*3600-hora*3600-minuto*60;
+	if(dia.toString().length<2){
+		dia = '0' + dia;
+	}
+	if(hora.toString().length<2){
+		hora = '0' + hora;
+	}
+	if(minuto.toString().length<2){
+		minuto = '0' + minuto;
+	}
+	if(segundo.toString().length<2){
+		segundo = '0' + segundo;
+	}
+	if(B8>0){
+		$('#counter').countdown({
+			image: 'img/digits.png',
+			startTime: dia + ':' + hora+ ':' + minuto+ ':' + segundo,
+			timerEnd: function(){ 
+				$('.desc').html('<h1>Actualiza la App!</h1>');
+			},
+		});
+	}else{
+		//alert('Actualiza la App!'); 
+		$('.desc').html('<h1>Actualiza la App!</h1>');
+	}
+});
+</script>
+<style type="text/css">
+br {
+	clear: both;
+}
+.cntSeparator {
+	font-size: 54px;
+	margin: 10px 7px;
+	color: #000;
+}
+.desc {
+	margin-top: 7px;
+}
+.desc div {
+	float: left;
+	font-family: Helvetica, Arial;
+	width: 130px;
+	font-size: 20px;
+	font-weight: bold;
+	color: #000;
+	/*border:#F00 1px solid;*/
+	text-align: center;
+}
+body, html {
+	height: 100%;
+}
+</style>
+</head>
+<body>
+<table align="center" height="100%" border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    <td align="center" valign="middle"><img id="logo" src="img/logo.png" width="450" /></td>
+  </tr>
+  <tr>
+    <td align="center" valign="middle"><div id="counter"></div>
+      <div class="desc">
+        <div>Días</div>
+        <div>Horas</div>
+        <div>Minutos</div>
+        <div>Segundos</div>
+      </div>
+      <div></div>
+      </td>
+  </tr>
+  <tr>
+    <td align="center" valign="middle">&nbsp;</td>
+  </tr>
+</table>
+</body>
+</html>

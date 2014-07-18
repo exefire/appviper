@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<widget xmlns = "http://www.w3.org/ns/widgets"
+        xmlns:gap = "http://phonegap.com/ns/1.0"
+        id        = "com.exefire.viper"
+        versionCode="10"
+        version   = "1.0.0">
+	<!--Preferencias-->
+  <name>VIPer</name>
+  <description>VIPer permite a las empresas enviar notificaciones oficiales y relevantes a grupos y subgrupos de usuario de manera directa y controlada.</description>
+  <author href="http://www.exefire.com" email="egallardo@exefire.com">Exequiel Gallardo</author>
+  <preference name="phonegap-version" value="3.3.0" />
+  <preference name="orientation" value="portrait" />
+  <preference name="prerendered-icon" value="true" />
+  <preference name="target-device" value="handset" />
+  <!-- Iconos -->
+  <icon src="icons/icon.png" />
+  <icon src="icons/android/icon-android-36.png" gap:platform="android" gap:density="ldpi" />
+  <icon src="icons/android/icon-android-48.png" gap:platform="android" gap:density="mdpi" />
+  <icon src="icons/android/icon-android-72.png" gap:platform="android" gap:density="hdpi" />
+  <icon src="icons/android/icon-android-72.png" gap:platform="android" gap:density="xhdpi" />
+  <icon src="icons/ios/icon-iphone-57.png" gap:platform="ios" width="57" height="57" />
+  <icon src="icons/ios/icon-iphone-72.png" gap:platform="ios" width="72" height="72" />
+  <icon src="icons/ios/icon-iphone-114.png" gap:platform="ios" width="114" height="114" />
+  <icon src="icons/ios/icon-iphone-120.png" gap:platform="ios" width="120" height="120" />
+  <icon src="icons/ios/icon-iphone-114.png" gap:platform="ios" width="144" height="144" />
+  <!--Pantallas de Inicio-->
+  <gap:splash src="splash/ios/Default.png" />
+  <gap:splash src="splash/ios/Default.png" width="320" height="480" />
+  <gap:splash src="splash/ios/Default_at_2x.png" width="640" height="960" />
+  <gap:splash src="splash/ios/Default_iphone5.png" width="640" height="1136" />
+  <gap:splash src="splash/ios/Default-Landscape.png" width="1024" height="768" />
+  <gap:splash src="splash/ios/Default-Portrait.png" width="768" height="1024" />
+	<!--Plugins-->
+</widget>
